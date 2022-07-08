@@ -15,7 +15,7 @@ app.use('/flights', require('./routes/flight.route.js'));
 app.all('*', (req, res)=>{
     res.status(404).send('We don\'t have the resource you\'re looking for.')
 });
-mongoose.connect("mongodb+srv://dfeagins:Feng51631415@cluster0.iobz1an.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://dfeagins:<password>@cluster0.iobz1an.mongodb.net/?retryWrites=true&w=majority")
 .then(()=>{
     console.log('Successfully connected to MongoDB!')
 })
