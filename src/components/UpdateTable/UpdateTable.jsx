@@ -16,6 +16,12 @@ export const UpdateTable = () =>{
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
+            if(parseInt(PassengerLimitRef.current.value)<parseInt(PassengerNumberRef.current.value)){
+                alert("Passenger number exceeds limit.");
+            }
+            if(parseInt(PassengerLimitRef.current.value)>=parseInt(PassengerNumberRef.current.value)){
+             
+            
            let response= await axios.put(`http://localhost:8080/flights`, 
                             { FlightNumber: FlightNumberRef.current.value, DepartureDate: DepartureDateRef.current.value,
                             ArrivalDate: ArrivalDateRef.current.value, DepartureTime: DepartureTimeRef.current.value,ArrivalTime:ArrivalTimeRef.current.value,
@@ -23,6 +29,7 @@ export const UpdateTable = () =>{
                         ArrivalAirport: ArrivalAirportRef.current.value, PassengerLimit: PassengerLimitRef.current.value, PassengerNumber: PassengerNumberRef.current.value });
             console.log(response);
                         navigate('../', {replace: true});
+                            }
         } catch (error) {
             console.log(error);
         }

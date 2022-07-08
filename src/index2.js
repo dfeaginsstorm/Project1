@@ -1,13 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('./middleware/logger');
-require('dotenv').config(); // One and done so I don't need the value from require
-const cors = require('cors'); // Cross Origin Resource Sharing
+require('dotenv').config(); 
+const cors = require('cors'); 
 
 const app = express();
-const PORT = process.env.PORT || 8080; // Default to 8080 if not in .env
-app.use(express.json()); // This is middleware that auto parses JSON into JS objects between each HTTP request and the endpoint
-app.use(cors()); // Allow all traffic
+const PORT = process.env.PORT || 8080; 
+app.use(express.json()); 
+app.use(cors());
 app.use(logger);
 
 
@@ -21,10 +21,6 @@ mongoose.connect("mongodb+srv://dfeagins:Feng51631415@cluster0.iobz1an.mongodb.n
 })
 .catch(err=>{
     console.error(err);
-    //Options
-    //Connect to fallback database
-    //OR
-    //Terminate process
     process.exit(1);
 });
 

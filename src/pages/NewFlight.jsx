@@ -1,5 +1,5 @@
 import { InputTable } from '.././components/InputTable';
-export const Landing = () =>{
+export const NewFlight = () =>{
     return (
         <>
         <center>

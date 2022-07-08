@@ -62,10 +62,4 @@ export const InputTable = () =>{
         </form>
     );
 }
-//o	Flight Number
-//	Departure Date
-//o	Arrival date
-//o	departure time
-//o	arrival time
-//o	departure airport
-//o	arrival airport
+

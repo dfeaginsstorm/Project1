@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-//import { getMouseEventOptions } from '@testing-library/user-event/dist/utils';
 import './FlightList.css';
 export const FlightList = () =>{
     const [flights, setFlights] = useState([]);
